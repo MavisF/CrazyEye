@@ -35,6 +35,7 @@ def acc_login(request):
     today_str = datetime.date.today().strftime("%Y%m%d")
     # verify_code_img_path = "%s/%s" %(settings.VERIFICATION_CODE_IMGS_DIR,
     #                                  today_str)
+    
     # if not os.path.isdir(verify_code_img_path):
     #     os.makedirs(verify_code_img_path,exist_ok=True)
     # #print("session:",request.session.session_key)
@@ -49,9 +50,7 @@ def acc_login(request):
         password = request.POST.get('password')
         _verify_code = request.POST.get('verify_code')
         _verify_code_key  = request.POST.get('verify_code_key')
-
-        ##print("verify_code_key:",_verify_code_key)
-        ##print("verify_code:",_verify_code)
+test
         if cache.get(_verify_code_key) == _verify_code:
             #print("code verification pass!")
 
